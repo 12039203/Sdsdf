@@ -1,0 +1,75 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">XLinkSDK Demo</string>
+    <string name="confirm">确定</string>
+    <string name="cancel">取消</string>
+    <string name="complete">完成</string>
+    <string name="tips">提示</string>
+    <string name="next">下一步</string>
+    <string name="ok">好的</string>
+
+    <string name="device_list">设备列表</string>
+    <string name="device_ctrl">设备控制</string>
+    <string name="add_device">添加设备</string>
+    <string name="add_fail">添加失败</string>
+    <string name="add_success">添加成功</string>
+    <string name="re_scan">重新扫描</string>
+    <string name="no_device">暂无设备</string>
+    <string name="device_name">设备</string>
+    <string name="rename">重命名</string>
+    <string name="local_connection">本地</string>
+    <string name="cloud_connection">云端</string>
+    <string name="state_online">在线</string>
+    <string name="state_not_online">离线</string>
+    <string name="scan_not_device">扫描超时，是否重试？</string>
+    <string name="scan_fail">扫描失败</string>
+    <string name="device_not_online">设备不在线</string>
+    <string name="index">索引: </string>
+    <string name="type">类型: </string>
+    <string name="value">数值: </string>
+    <string name="dp_name">名称: </string>
+
+    <string name="error_account_invalid">邮箱<xliff:g example="abc@example.com">%1$s</xliff:g>暂未激活，请激活再登录！</string>
+    <string name="error_account_or_pwd_invalid">账号或密码错误，请再次确认账号与密码的一致性！</string>
+    <string name="error_email_none_register"><xliff:g example="abc@example.com">%1$s</xliff:g>邮箱暂未注册，请注册再登录！</string>
+    <string name="error_phone_none_register">手机号<xliff:g example="13800013800">%1$s</xliff:g>暂未注册，请注册再登录！</string>
+    <string name="error_login_failure">登录失败</string>
+    <string name="error_third_login">登录失败，请重试！</string>
+
+    <string name="exit_app">再按一次退出Xlink Demo</string>
+    <string name="user_extrusion_title">下线提示</string>
+    <string name="user_extrusion_content">你的账号在别处登录，请确认你的账号密码安全！</string>
+    <string name="prompt_title">提示</string>
+    <string name="prompt_invaild_input">输入不合法</string>
+    <string name="menu_title_product_id">修改产品ID</string>
+    <string name="menu_edit_company_id">修改企业ID</string>
+    <string name="menu_sign_out">退出登录</string>
+    <string name="dpName">名称</string>
+    <string name="menu_delete_device">删除设备</string>
+    <string name="comfirm_delete_device">确认删除设备？</string>
+    <string name="prompt_delete_device_error">删除设备失败</string>
+    <string name="menu_test">测试页面</string>
+    <string name="menu_share_device">分享设备</string>
+    <string name="comfirm_share_device">请输入对方的账号</string>
+    <string name="prompt_handle_share">收到分享</string>
+    <string name="share_device_fail">分享失败</string>
+    <string name="share_device_success">分享成功</string>
+    <string name="share_device_offline">离线设备不能分享</string>
+    <string name="share_device_accept_fail">接受分享失败</string>
+    <string name="share_device_accept_success">接受分享成功</string>
+    <string name="share_device_list">分享列表</string>
+    <string name="get_share_list_error">获取分享列表失败</string>
+    <string name="menu_share_cancel">取消分享</string>
+    <string name="menu_share_delete">删除分享记录</string>
+    <string name="menu_share_accept">接受分享</string>
+    <string name="share_handle_success">请求成功</string>
+    <string name="share_notify_accept">分享已被接受</string>
+    <string name="share_notify_cancel">分享已被取消</string>
+    <string name="share_notify_deny">分享已被拒绝</string>
+    <string name="share_btn_deny">拒绝</string>
+    <string name="share_btn_accept">接受</string>
+    <string name="share_device_deny_fail">拒绝分享失败</string>
+    <string name="share_device_deny_success">拒绝分享成功</string>
+    <string name="get_share_handle_error">处理分享失败</string>
+    <string name="show_sdk_version">显示SDK版本</string>
+
+</resources>

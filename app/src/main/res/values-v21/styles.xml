@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+        <!-- 是否留出padding空间不绘制控件 -->
+        <item name="android:clipToPadding">false</item>
+        <!-- 是否忽略StatusBar,Navigation的空间不绘制控件 -->
+        <item name="android:fitsSystemWindows">false</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!-- AppCompat控件默认状态颜色 -->
+        <item name="colorControlNormal">@color/colorControlNormal</item>
+        <!-- AppCompat控件活动时颜色 -->
+        <item name="colorControlActivated">@color/colorControlActivated</item>
+        <!-- AppCompat控件高亮时颜色 -->
+        <item name="colorControlHighlight">@color/colorControlHighlight</item>
+        <item name="android:windowBackground">@color/windowBackground</item>
+        <item name="android:windowAnimationStyle">@style/Anim.Activity</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar" parent="AppTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar.Transparent" parent="AppTheme.NoActionBar">
+        <item name="colorPrimaryDark">@android:color/transparent</item>
+    </style>
+</resources>

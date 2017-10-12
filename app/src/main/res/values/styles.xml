@@ -1,0 +1,66 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppDialog" parent="AlertDialog.AppCompat">
+        <item name="android:windowBackground">@drawable/rect_dialog</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:backgroundDimAmount">0.7</item>
+    </style>
+
+    <style name="AppDialog.Bottom" parent="AppDialog">
+        <item name="android:windowBackground">@color/backgroundColor_white</item>
+        <item name="android:windowAnimationStyle">@style/DialogBottomAnim</item>
+    </style>
+
+    <style name="DialogBottomAnim" parent="@android:style/Animation.Dialog">
+        <item name="android:windowEnterAnimation">@anim/bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/bottom_out</item>
+    </style>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Dark"/>
+
+    <style name="AppTheme.AppBarOverlay" parent="AppTheme">
+        <item name="homeAsUpIndicator">@mipmap/back2_ic</item>
+        <item name="android:homeAsUpIndicator">@mipmap/back2_ic</item>
+        <item name="navigationIcon">@mipmap/back2_ic</item>
+        <item name="actionMenuTextColor">@color/colorControlActivated</item>
+    </style>
+
+    <style name="AppTheme.EditText" parent="@android:style/Widget.EditText">
+    </style>
+
+    <style name="AppTheme.EditText.Input">
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:layout_marginRight">5dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+    </style>
+
+    <style name="AppTheme.Button" parent="@android:style/Widget.Button">
+    </style>
+
+    <style name="AppTheme.Button.Large">
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:layout_marginRight">5dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+    </style>
+
+    <!-- have v21-->
+    <style name="AppTheme.NoActionBar" parent="AppTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Anim.Activity" parent="@android:style/Animation.Activity"/>
+</resources>

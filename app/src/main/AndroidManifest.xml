@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="cn.xlink.sdk.demo"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 下面是sdk需要的权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- 上面是sdk需要的权限 -->
+
+    <application
+        android:name=".ui.module.DemoApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".ui.module.login.LoginActivity">
+        </activity>
+        <activity
+            android:name=".ui.module.main.MainActivity"
+            android:launchMode="singleTop"/>
+        <activity android:name=".ui.module.add.AddDeviceActivity"/>
+        <activity android:name=".ui.module.ctrl.ControlDeviceActivity"/>
+        <activity android:name=".ui.module.splash.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.module.share.ShareListActivity">
+        </activity>
+
+        <service android:name="cn.xlink.sdk.v5.module.main.KeepAliveService"/>
+    </application>
+
+</manifest>

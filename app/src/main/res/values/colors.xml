@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/colorControlNormal</color>
+    <color name="colorPrimaryDark">@color/colorControlHighlight</color>
+    <color name="colorAccent">@color/colorControlActivated</color>
+
+    <color name="colorControlNormal">#B9BFC2</color>
+    <color name="colorControlActivated">#323E42</color>
+    <color name="colorControlHighlight">#99606060</color>
+    <color name="colorControlHighlight_white">#66F0F0F0</color>
+    <color name="colorHint">#CFD1D2</color>
+    <color name="colorTextHint">#B3B3B3</color>
+    <color name="colorText">@color/colorControlActivated</color>
+    <color name="colorDivider">@color/colorControlNormal</color>
+    <color name="windowBackground">@color/backgroundColor_white</color>
+    <color name="hyperlink">#0217B2</color>
+    <color name="whiteText">#FFFFFF</color>
+    <color name="whiteTextAlpha">#99FFFFFF</color>
+    <color name="whiteTextDarkAlpha">#66FFFFFF</color>
+
+    <color name="pm_good">#3DE464</color>
+    <color name="pm_normal_polluted">#F3CF29</color>
+    <color name="pm_moderately_polluted">#E33A39</color>
+
+    <color name="backgroundColor_dark">#323E42</color>
+    <color name="backgroundColor_white">#FFFFFF</color>
+    <color name="backgroundColor_gray">#F2F2F2</color>
+    <color name="simple_text_dialog_textColor">#000</color>
+
+</resources>
