@@ -13,7 +13,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:src="@mipmap/ic_launcher"/>
+            android:src="@mipmap/xlink"/>
 
     </RelativeLayout>
 
@@ -30,27 +30,27 @@
             style="@style/AppTheme.EditText.Input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="请输入CompanyID"
             android:imeOptions="actionNext"
-            android:inputType="text"
-            android:hint="请输入CompanyID"/>
+            android:inputType="text"/>
 
         <EditText
             android:id="@+id/accountEditText"
             style="@style/AppTheme.EditText.Input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="请输入邮箱或手机号"
             android:imeOptions="actionNext"
-            android:inputType="text"
-            android:hint="请输入邮箱或手机号"/>
+            android:inputType="text"/>
 
         <EditText
             android:id="@+id/pwdEditText"
             style="@style/AppTheme.EditText.Input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="请输入密码"
             android:imeOptions="actionDone"
-            android:inputType="textPassword"
-            android:hint="请输入密码"/>
+            android:inputType="textPassword"/>
 
         <Button
             android:id="@+id/signInButton"
@@ -61,5 +61,33 @@
             android:text="登录"/>
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_login_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/inputMainLayout"
+        android:gravity="right"
+        android:padding="20dp"
+        android:text="还没有账号请点击注册"/>
+
+    <TextView
+        android:id="@+id/tv_login_psd_found"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_login_register"
+        android:gravity="right"
+        android:padding="20dp"
+        android:text="忘记密码请点击找回"/>
+
+
+    <TextView
+        android:id="@+id/tv_login_mail_or_phone_not_receive"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_login_psd_found"
+        android:gravity="right"
+        android:padding="20dp"
+        android:text="收不到邮件或者短信?"/>
 
 </RelativeLayout>

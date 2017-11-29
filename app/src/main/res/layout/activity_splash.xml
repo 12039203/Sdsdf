@@ -7,9 +7,9 @@
     tools:context="cn.xlink.sdk.demo.ui.module.splash.SplashActivity">
 
     <ImageView
-        android:src="@mipmap/ic_launcher"
-        android:scaleType="center"
-        android:layout_height="match_parent"
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="center"
+        android:src="@mipmap/xlink"
         />
 </LinearLayout>

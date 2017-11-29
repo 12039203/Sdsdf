@@ -31,8 +31,7 @@
         android:layout_height="wrap_content"
         android:hint="请输入企业ID"
         android:imeOptions="actionNext"
-        android:inputType="text"
-        android:text="1007d2b2f2b38600"/>
+        android:inputType="text"/>
 
     <EditText
         android:id="@+id/et_register_pwd"
