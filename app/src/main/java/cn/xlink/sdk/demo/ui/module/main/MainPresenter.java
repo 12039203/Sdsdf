@@ -54,6 +54,7 @@ public class MainPresenter extends BaseActivityPresenter<MainActivity> {
         DeviceManager.getInstance().clear();
         // 停止SDK, 断开云端连接，清除授权信息
         XLinkSDK.logoutAndStop();
+//        XLinkSDK.logout();
     }
 
     public void exitApp() {

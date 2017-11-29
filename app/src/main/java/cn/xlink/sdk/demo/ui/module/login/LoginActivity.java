@@ -2,6 +2,7 @@ package cn.xlink.sdk.demo.ui.module.login;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -18,6 +19,8 @@ import cn.xlink.sdk.demo.R;
 import cn.xlink.sdk.demo.manager.UserManager;
 import cn.xlink.sdk.demo.ui.custom.base.BaseActivity;
 import cn.xlink.sdk.demo.ui.module.main.MainActivity;
+import cn.xlink.sdk.demo.ui.module.psdfound.PasswordFoundActivity;
+import cn.xlink.sdk.demo.ui.module.register.RegisterActivity;
 import cn.xlink.sdk.demo.utils.StringUtil;
 import cn.xlink.sdk.v5.module.main.XLinkSDK;
 
@@ -81,11 +84,26 @@ public class LoginActivity extends BaseActivity {
         EventBus.getDefault().unregister(this);
     }
 
-    @OnClick({R.id.signInButton})
+    @OnClick({R.id.signInButton, R.id.tv_login_register, R.id.tv_login_psd_found, R.id.tv_login_mail_or_phone_not_receive})
     public void onSignInClick(View view) {
         switch (view.getId()) {
             case R.id.signInButton:
                 attemptLogin();
+                break;
+            case R.id.tv_login_psd_found:
+                startActivity(new Intent(this, PasswordFoundActivity.class));
+                break;
+            case R.id.tv_login_mail_or_phone_not_receive:
+                showPromptDialog("提示", "收不到邮件或者短信请耐心等待一下,能正常提交会收到信息的.\n若长时间未收到(5-10分钟),可能是相关运营商未发送成功,请再重试.\n反复重试需要图片验证,暂时未处理该功能");
+                break;
+            case R.id.tv_login_register:
+                Intent intent = new Intent(this, RegisterActivity.class);
+                String cropId = mCorpIdEditText.getText().toString();
+                if (!TextUtils.isEmpty(cropId)) {
+                    intent.putExtra("cropId", cropId);
+                }
+                startActivity(intent);
+                finish();
                 break;
         }
     }

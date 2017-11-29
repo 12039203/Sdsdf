@@ -261,7 +261,7 @@ public class MainActivity extends BaseActivity {
      * 修改产品ID
      */
     private void showEditProductId() {
-        final String pid = PrefUtil.getStringValue(getContext(), Constant.PREF_KEY_PRODUCT_ID, "");
+        final String pid = PrefUtil.getStringValue(getContext(), Constant.PREF_KEY_PRODUCT_ID, "160f26b2f2b9ffff160f26b2f2b98801");
         showEditDialog("设置Product ID", pid, new AppDialog.OnUpdateListener<String>() {
             @Override
             public void onUpdate(String newPid) {
