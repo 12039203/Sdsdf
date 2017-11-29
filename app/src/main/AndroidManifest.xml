@@ -12,12 +12,14 @@
     <application
         android:name=".ui.module.DemoApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/xlink"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
         <activity android:name=".ui.module.login.LoginActivity">
         </activity>
+        <activity android:name=".ui.module.register.RegisterActivity"/>
+        <activity android:name=".ui.module.psdfound.PasswordFoundActivity"/>
         <activity
             android:name=".ui.module.main.MainActivity"
             android:launchMode="singleTop"/>

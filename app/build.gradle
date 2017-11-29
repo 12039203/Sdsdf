@@ -1,9 +1,8 @@
 apply plugin: 'com.android.application'
-apply plugin: 'android-apt'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion '25.0.2'
+    buildToolsVersion '26.0.2'
     defaultConfig {
         applicationId "cn.xlink.sdk.demoapp"
         minSdkVersion 17
@@ -21,14 +20,14 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
+    api fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:25.2.0'
     compile 'com.android.support:design:25.2.0'
     compile 'com.jakewharton:butterknife:8.4.0'
-    apt 'com.jakewharton:butterknife-compiler:8.4.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'org.greenrobot:eventbus:3.0.0'
     testCompile 'junit:junit:4.12'
@@ -40,7 +39,8 @@ dependencies {
     compile 'com.squareup.retrofit2:converter-scalars:2.3.0'
     compile 'com.squareup.okhttp3:logging-interceptor:3.8.1'
     // sdk - stop
-    compile files('libs/xlink_restful.jar')
+    //    compile files('libs/xlink_restful.jar')
+    //    compile files('libs/expiringmap-0.5.7.jar')
 }
 
 task releaseApk {
