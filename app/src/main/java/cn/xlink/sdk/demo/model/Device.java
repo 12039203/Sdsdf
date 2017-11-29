@@ -4,7 +4,6 @@ package cn.xlink.sdk.demo.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import cn.xlink.sdk.common.CommonUtil;
 import cn.xlink.sdk.core.model.DataPointValueType;
 import cn.xlink.sdk.v5.model.XDevice;
 import cn.xlink.sdk.v5.model.XLinkDataPoint;
@@ -48,12 +47,12 @@ public final class Device {
     }
 
     public void setDataPoints(List<XLinkDataPoint> dataPoints) {
-//        mDataPoints = dataPoints;
-        if (!CommonUtil.isEmpty(dataPoints)) {
-//             // 求并集
-            mDataPoints.removeAll(dataPoints);
-            mDataPoints.addAll(dataPoints);
-        }
+        mDataPoints = dataPoints;
+//        if (!CommonUtil.isEmpty(dataPoints)) {
+            // 求并集
+//            mDataPoints.removeAll(dataPoints);
+//            mDataPoints.addAll(dataPoints);
+//        }
     }
 
     public XDevice getXDevice() {

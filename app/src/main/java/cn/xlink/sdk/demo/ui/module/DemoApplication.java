@@ -23,6 +23,9 @@ public class DemoApplication extends Application {
     public void onCreate() {
         super.onCreate();
         sInstance = this;
+
+        ExceptionCrashUnhandler.getInstance().init(this);
+
         initManager();
         initXLink();
     }
@@ -38,6 +41,9 @@ public class DemoApplication extends Application {
         //配置SDK
         DemoApplicationListener xlinkListener = new DemoApplicationListener(this);
         XLinkConfig config = new XLinkConfig.Builder()
+                //正式环境和CM地址
+                //测试环境时需要开启 SSL false
+//                .setEnableSSL(false)
                 .setXLinkUser(lastUser) // 加载已经保存的授权信息
                 .setDebug(true) // 是否打印SDK日志
                 .setAutoDumpCrash(true) //是否自动转存崩溃日志

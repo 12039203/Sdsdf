@@ -18,6 +18,7 @@ import cn.xlink.sdk.demo.model.Device;
 import cn.xlink.sdk.v5.listener.XLinkTaskListener;
 import cn.xlink.sdk.v5.model.XDevice;
 import cn.xlink.sdk.v5.model.XLinkDataPoint;
+import cn.xlink.sdk.v5.module.connection.XLinkConnectDeviceTask;
 import cn.xlink.sdk.v5.module.datapoint.XLinkGetDataPointMetaInfoTask;
 import cn.xlink.sdk.v5.module.http.XLinkSyncDeviceListTask;
 import cn.xlink.sdk.v5.module.main.XLinkErrorCode;
@@ -128,6 +129,42 @@ public class DeviceManager {
     }
 
     /**
+     * 连接设备 XlinkListener回调
+     */
+    public static void connectDevice(final Device device) {
+        if (device == null) {
+            Log.d(TAG, "connect null device");
+            return;
+        }
+        if (!device.isConnected()) {
+            Log.d(TAG, "connect device ：" + device.getXDevice().getMacAddress());
+            // 新建连接任务
+            XLinkConnectDeviceTask connectDeviceTask = XLinkConnectDeviceTask.newBuilder()
+                    .setXDevice(device.getXDevice())
+                    .setListener(new XLinkTaskListener<XDevice>() {
+                        @Override
+                        public void onError(XLinkErrorCode errorCode) {
+                            Log.d(TAG, "XLinkConnectDeviceTask onError() called with: errorCode = [" + errorCode + "]");
+                        }
+
+                        @Override
+                        public void onStart() {
+                            Log.d(TAG, "XLinkConnectDeviceTask onStart() called");
+                        }
+
+                        @Override
+                        public void onComplete(XDevice result) {
+                            Log.d(TAG, "XLinkConnectDeviceTask onComplete() called with: result = [" + result + "]");
+                        }
+                    })
+                    .build();
+            // 执行连接设备
+            XLinkSDK.startTask(connectDeviceTask);
+            // 在XLinkSDK的XLinkDeviceStateListener中的onDeviceStateChanged()也会被调用。
+        }
+    }
+
+    /**
      * 新建获取设备列表任务。要求设备和当前用户之间有订阅关系。
      */
     public void refreshDeviceList(final XLinkTaskListener<List<XDevice>> listener) {
@@ -173,7 +210,7 @@ public class DeviceManager {
                             }
 
                             // 正式开发环境无需调用下面这一行
-                            syncDataPointMetaInfo(xDevices);
+//                            syncDataPointMetaInfo(xDevices);
                         }
 
                         if (listener != null) {
