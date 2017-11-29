@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -58,6 +59,7 @@ public class AddDeviceActivity extends BaseActivity {
         if (mSelectedDevices.size() != 0) {
             mPresenter.doAddDevice(mSelectedDevices);
         }
+        Collections.singletonList(1);
     }
 
     @Override
@@ -171,9 +173,14 @@ public class AddDeviceActivity extends BaseActivity {
         }
     }
 
+    public void showScanningUncompleted() {
+        Toast.makeText(getContext(), "扫描未结束,请耐心等候...", Toast.LENGTH_LONG).show();
+    }
+
     public void showStartScanning() {
         topSubhead.setVisibility(View.VISIBLE);
         topSubhead.setText("(正在扫描)");
+        Toast.makeText(getContext(), "正在扫描设备,请稍后...", Toast.LENGTH_LONG).show();
     }
 
     public void showCompleteScanning() {

@@ -100,9 +100,9 @@ public class ControlDeviceActivity extends BaseActivity {
         mDevice = DeviceManager.getInstance().getDevice(mac);
         mPresenter = new ControlDevicePresenter(this, mDevice);
 
-        initData();
         initView();
         initRecycler();
+        initData();
     }
 
     @Override

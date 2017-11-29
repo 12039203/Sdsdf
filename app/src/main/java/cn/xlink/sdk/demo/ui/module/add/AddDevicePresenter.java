@@ -77,6 +77,9 @@ public class AddDevicePresenter extends BaseActivityPresenter<AddDeviceActivity>
      */
     void scan(String pid) {
         if (mScanning || StringUtil.isEmpty(pid)) {
+            if (getView() != null) {
+                getView().showScanningUncompleted();
+            }
             return;
         }
 
@@ -257,7 +260,7 @@ public class AddDevicePresenter extends BaseActivityPresenter<AddDeviceActivity>
                                     // 正式开发环境无需添加这一行代码
                                     // 正式开发环境无需添加这一行代码
                                     // 正式开发环境无需添加这一行代码
-                                    DeviceManager.getInstance().syncDataPointMetaInfo(Collections.singletonList(xDevice));
+//                                    DeviceManager.getInstance().syncDataPointMetaInfo(Collections.singletonList(xDevice));
 
                                     mAddDevicePresenter.onSubscribeDeviceSuccess(xDevice);
 

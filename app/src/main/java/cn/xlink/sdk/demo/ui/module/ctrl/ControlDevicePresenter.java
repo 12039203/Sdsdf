@@ -82,7 +82,6 @@ public class ControlDevicePresenter extends BaseActivityPresenter<ControlDeviceA
 
                     @Override
                     public void onStart() {
-
                     }
 
                     @Override
