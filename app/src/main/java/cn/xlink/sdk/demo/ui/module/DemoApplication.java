@@ -2,7 +2,7 @@ package cn.xlink.sdk.demo.ui.module;
 
 import android.app.Application;
 import android.widget.Toast;
-
+import cn.xlink.sdk.demo.BuildConfig;
 import cn.xlink.sdk.common.XLog;
 import cn.xlink.sdk.demo.manager.DeviceManager;
 import cn.xlink.sdk.demo.manager.UserManager;
@@ -43,7 +43,7 @@ public class DemoApplication extends Application {
         XLinkConfig config = new XLinkConfig.Builder()
                 //正式环境和CM地址
                 //测试环境时需要开启 SSL false
-//                .setEnableSSL(false)
+//                .setEnableSSL(true)
                 .setXLinkUser(lastUser) // 加载已经保存的授权信息
                 .setDebug(true) // 是否打印SDK日志
                 .setAutoDumpCrash(true) //是否自动转存崩溃日志

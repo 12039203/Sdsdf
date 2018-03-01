@@ -15,6 +15,7 @@ import org.greenrobot.eventbus.EventBus;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import cn.xlink.sdk.demo.BuildConfig;
 import cn.xlink.sdk.demo.R;
 import cn.xlink.sdk.demo.manager.UserManager;
 import cn.xlink.sdk.demo.ui.custom.base.BaseActivity;
@@ -53,7 +54,9 @@ public class LoginActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         presenter = new LoginPresenter(this);
-
+        String pid = BuildConfig.pid;
+        Intent intent = new Intent(this,MainActivity.class);
+        intent.putExtra("pid",pid);
         String corpId = UserManager.getInstance().getCorpId();
         String account = UserManager.getInstance().getAccount();
         if (StringUtil.isAllNotEmpty(corpId, account)) {
@@ -111,7 +114,7 @@ public class LoginActivity extends BaseActivity {
     //////////////////////////////////////////////////////////////////////
 
     private void attemptLogin() {
-        String corpId = mCorpIdEditText.getText().toString();
+        String corpId = BuildConfig.Corpid;
         String account = mAccountEditText.getText().toString();
         String pwd = mPwdEditText.getText().toString();
 

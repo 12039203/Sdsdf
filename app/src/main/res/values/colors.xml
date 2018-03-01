@@ -2,21 +2,22 @@
 <resources>
     <color name="colorPrimary">@color/colorControlNormal</color>
     <color name="colorPrimaryDark">@color/colorControlHighlight</color>
-    <color name="colorAccent">@color/colorControlActivated</color>
+    <color name="colorAccent">#A67d</color>
 
     <color name="colorControlNormal">#B9BFC2</color>
-    <color name="colorControlActivated">#323E42</color>
+    <color name="colorControlActivated">#007fff</color>
     <color name="colorControlHighlight">#99606060</color>
     <color name="colorControlHighlight_white">#66F0F0F0</color>
     <color name="colorHint">#CFD1D2</color>
     <color name="colorTextHint">#B3B3B3</color>
-    <color name="colorText">@color/colorControlActivated</color>
+    <color name="colorText">#000</color>
     <color name="colorDivider">@color/colorControlNormal</color>
     <color name="windowBackground">@color/backgroundColor_white</color>
     <color name="hyperlink">#0217B2</color>
     <color name="whiteText">#FFFFFF</color>
     <color name="whiteTextAlpha">#99FFFFFF</color>
     <color name="whiteTextDarkAlpha">#66FFFFFF</color>
+    <color name="uiframe_text_default_disable">#e4e4e4</color>
 
     <color name="pm_good">#3DE464</color>
     <color name="pm_normal_polluted">#F3CF29</color>
@@ -26,5 +27,9 @@
     <color name="backgroundColor_white">#FFFFFF</color>
     <color name="backgroundColor_gray">#F2F2F2</color>
     <color name="simple_text_dialog_textColor">#000</color>
+    <color name="uiframe_main_bg">#2DA2FF</color>
+    <color name="colorPageBg">#ffffffff</color>
+    <color name="uiframe_text_gray">#7f7f7f</color>
+
 
 </resources>

@@ -4,7 +4,7 @@ import android.content.Context;
 
 import java.lang.ref.WeakReference;
 
-import cn.xlink.sdk.demo.constant.Constant;
+import cn.xlink.sdk.demo.ui.custom.constant.Constant;
 import cn.xlink.sdk.demo.utils.PrefUtil;
 
 

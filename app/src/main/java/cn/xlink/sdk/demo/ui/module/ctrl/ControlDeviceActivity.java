@@ -22,7 +22,7 @@ import org.greenrobot.eventbus.ThreadMode;
 
 import butterknife.BindView;
 import cn.xlink.sdk.demo.R;
-import cn.xlink.sdk.demo.constant.Constant;
+import cn.xlink.sdk.demo.ui.custom.constant.Constant;
 import cn.xlink.sdk.demo.eventbus.DataPointUpdateEvent;
 import cn.xlink.sdk.demo.manager.DeviceManager;
 import cn.xlink.sdk.demo.model.Device;

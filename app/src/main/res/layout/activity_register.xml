@@ -27,11 +27,8 @@
     <EditText
         android:id="@+id/et_register_cropid"
         style="@style/AppTheme.EditText.Input"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="请输入企业ID"
-        android:imeOptions="actionNext"
-        android:inputType="text"/>
+        android:layout_width="1dp"
+        android:layout_height="1dp"/>
 
     <EditText
         android:id="@+id/et_register_pwd"

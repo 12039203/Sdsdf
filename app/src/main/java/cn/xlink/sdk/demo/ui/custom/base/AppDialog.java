@@ -18,6 +18,7 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -364,7 +365,68 @@ public class AppDialog extends Dialog {
 
         return dialog;
     }
-
+//    /**
+//     * 选择产品id的dialog
+//     */
+//    public static AppDialog doubleChoice(Context context, String title, String value,
+//                                         final OnUpdateListener<String> listener) {
+//        final AppDialog dialog = new AppDialog(context, R.layout.dialog_choice_button,
+//                (int) (context.getResources().getDisplayMetrics().widthPixels * 0.85f), 0);
+//        dialog.setCanceledOnTouchOutside(false);
+//        final String[] pid = new String[3];
+//        TextView tvTitle = (TextView) dialog.findViewById(R.id.text_title);
+//        if (tvTitle != null) {
+//            if (!TextUtils.isEmpty(title))
+//                tvTitle.setText(title);
+//        }
+//        RadioGroup rg_sex = (RadioGroup)dialog.findViewById(R.id.radioGroup_sex_id);
+//        rg_sex.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(RadioGroup group, int checkedId) {
+//                switch (checkedId) {
+//                    case R.id.radio1:
+//                        pid[0] = "160fa2b41d1e03e9160fa2b41d1e9c01";
+//                        break;
+////                     case R.id.radio2:
+////                         pid[1]="";
+////                         break ;
+////                    case R.id.radio3:
+////                        pid[2]="";
+////                        break ;
+////                        default:
+////                                break;
+//                }
+//            }
+//        });
+//
+//
+//        AppCompatButton cancel = (AppCompatButton) dialog.findViewById(R.id.button_cancel);
+//        cancel.setText(context.getString(R.string.cancel));
+//
+//        if (cancel != null) {
+//            cancel.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    dialog.dismiss();
+//                }
+//            });
+//        }
+//
+//        AppCompatButton confirm = (AppCompatButton) dialog.findViewById(R.id.button_confirm1);
+//        confirm.setText(context.getString(R.string.confirm));
+//        if (confirm != null) {
+//            confirm.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    dialog.dismiss();
+//                    if (listener != null)
+//                        listener.onUpdate(pid[0]);
+//                }
+//            });
+//        }
+//
+//        return dialog;
+//    }
     /**
      * 包含标题、内容和edittext的dialog
      */

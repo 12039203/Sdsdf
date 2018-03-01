@@ -17,13 +17,33 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-}
+    flavorDimensions("3213")
+    productFlavors {
 
+        myibrary {
+            applicationId "com.example.myibrary"
+            dimension "3213"
+            buildConfigField "String", "Corpid", "\"100fa2b2c85ab600\""
+            buildConfigField "String", "pid", "\"160fa2b41d1e03e9160fa2b41d1e9c01\""
+        }
+        brary {
+            applicationId "com.example.brary"
+            dimension "3213"
+            buildConfigField "String", "Corpid", "\"100fa2affbc4fe00\""
+            buildConfigField "String", "pid", "\"160fa8b4544903e9160fa8b454494c01\""
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+}
 dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+    compile files('libs/hiflying-iots-android-smartlink-7.0.3.jar')
     compile 'com.android.support:appcompat-v7:25.2.0'
     compile 'com.android.support:design:25.2.0'
     compile 'com.jakewharton:butterknife:8.4.0'
@@ -41,6 +61,7 @@ dependencies {
     // sdk - stop
     //    compile files('libs/xlink_restful.jar')
     //    compile files('libs/expiringmap-0.5.7.jar')
+    implementation files('libs/pinyin4android1.0.jar')
 }
 
 task releaseApk {
@@ -55,6 +76,7 @@ task releaseApk {
 
     dependsOn 'assembleRelease'
 }
+
 
 task debugApk {
     doLast {

@@ -7,6 +7,11 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    <style name="AppTheme.EditText.Default" parent="Base.Widget.AppCompat.EditText">
+        <item name="android:textCursorDrawable">@null</item>
+        <item name="android:textSize">@dimen/_30spx</item>
+        <item name="android:padding">@dimen/margin_dimen_5</item>
+    </style>
 
     <style name="AppDialog" parent="AlertDialog.AppCompat">
         <item name="android:windowBackground">@drawable/rect_dialog</item>

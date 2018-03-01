@@ -1,5 +1,6 @@
 package cn.xlink.sdk.demo.ui.module.add;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
@@ -18,11 +19,12 @@ import java.util.Set;
 import butterknife.BindView;
 import butterknife.OnClick;
 import cn.xlink.sdk.demo.R;
-import cn.xlink.sdk.demo.constant.Constant;
+import cn.xlink.sdk.demo.ui.custom.constant.Constant;
 import cn.xlink.sdk.demo.ui.custom.base.BaseActivity;
 import cn.xlink.sdk.demo.ui.custom.recyclerview_base.BaseViewHolder;
 import cn.xlink.sdk.demo.ui.custom.recyclerview_base.SingleItemAdapter;
 import cn.xlink.sdk.demo.ui.module.DemoApplication;
+import cn.xlink.sdk.demo.ui.module.main.MainActivity;
 import cn.xlink.sdk.v5.model.XDevice;
 import cn.xlink.sdk.v5.module.main.XLinkErrorCode;
 
@@ -60,6 +62,7 @@ public class AddDeviceActivity extends BaseActivity {
             mPresenter.doAddDevice(mSelectedDevices);
         }
         Collections.singletonList(1);
+
     }
 
     @Override
@@ -201,6 +204,8 @@ public class AddDeviceActivity extends BaseActivity {
     }
 
     public void onSubscribeDeviceComplete() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
         finish();
     }
 }

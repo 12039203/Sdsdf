@@ -86,7 +86,7 @@ public class AddDevicePresenter extends BaseActivityPresenter<AddDeviceActivity>
         mScanTask = XLinkScanDeviceTask.newBuilder()
                 .setTotalTimeout(SEARCH_NEW_DEVICE_TIMEOUT)// 设置超时，单位毫秒，默认90秒
                 .setProductIds(pid)
-                .setRetryInterval(SEARCH_NEW_DEVICE_INTERVAL)// scan per 1 sec
+//                .setRetryInterval(SEARCH_NEW_DEVICE_INTERVAL)// scan per 1 sec
                 .setScanDeviceListener(new XLinkScanDeviceListener() {// 设置搜索回调, **回调在主线程上执行**
                     @Override
                     public void onScanResult(XDevice xDevice) {
@@ -153,7 +153,7 @@ public class AddDevicePresenter extends BaseActivityPresenter<AddDeviceActivity>
     /**
      * 执行设备订阅
      */
-    void doAddDevice(final Set<XDevice> selectedDevices) {
+    void   doAddDevice(final Set<XDevice> selectedDevices) {
         if (selectedDevices == null || selectedDevices.size() == 0)
             return;
 

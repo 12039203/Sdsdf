@@ -1,6 +1,7 @@
 package cn.xlink.sdk.demo.ui.module.main;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -23,10 +24,12 @@ import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.List;
 
+import cn.xlink.sdk.demo.BuildConfig;
 import butterknife.BindView;
 import butterknife.OnClick;
 import cn.xlink.sdk.demo.R;
-import cn.xlink.sdk.demo.constant.Constant;
+import cn.xlink.sdk.demo.configwifi.ConfigWifiActivity;
+import cn.xlink.sdk.demo.ui.custom.constant.Constant;
 import cn.xlink.sdk.demo.eventbus.UpdateListEvent;
 import cn.xlink.sdk.demo.manager.DeviceManager;
 import cn.xlink.sdk.demo.model.Device;
@@ -48,6 +51,7 @@ import cn.xlink.sdk.v5.model.XDevice;
 import cn.xlink.sdk.v5.module.main.XLinkErrorCode;
 import cn.xlink.sdk.v5.module.main.XLinkSDK;
 
+
 public class MainActivity extends BaseActivity {
     private static final String TAG = "MainActivity";
 
@@ -67,7 +71,7 @@ public class MainActivity extends BaseActivity {
     private SingleItemAdapter<Device> deviceAdapter;
 
     private long mExitTimeStamp;
-
+    private boolean mIsShowProductId;
     private MainPresenter mPresenter;
 
     @Override
@@ -80,6 +84,9 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         initView();
         EventBus.getDefault().register(this);
+        String pid = BuildConfig.pid;
+
+        PrefUtil.setStringValue(getContext(), Constant.PREF_KEY_PRODUCT_ID, pid);
 
         mRefreshLayout.setOnRefreshListener(
                 new SwipeRefreshLayout.OnRefreshListener() {
@@ -143,12 +150,15 @@ public class MainActivity extends BaseActivity {
             case R.id.sign_out:
                 signOut();
                 break;
-            case R.id.edit_product_id:
-                showEditProductId();
-                break;
-            case R.id.edit_company_id:
-                showEditCorpId();
-                break;
+//            case R.id.edit_choice_id:
+//                showChoice();
+//                break;
+//            case R.id.edit_product_id:
+//                showEditProductId();
+//                break;
+//            case R.id.edit_company_id:
+//                showEditCorpId();
+//                break;
             case R.id.share_device_list:
                 showShareDeviceList();
                 break;
@@ -165,11 +175,15 @@ public class MainActivity extends BaseActivity {
         EventBus.getDefault().unregister(this);
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        refreshAdapter();
-    }
+//    @Override
+//    protected void onResume() {
+//        super.onResume();
+//        refreshAdapter();
+//        if (!mIsShowProductId) {
+//            showEditProductId();
+//            mIsShowProductId = true;
+//        }
+//    }
 
     @Override
     public void onBackPressed() {
@@ -184,7 +198,7 @@ public class MainActivity extends BaseActivity {
 
     @OnClick(R.id.bottom_view)
     protected void toAddDevice() {
-        final String pid = PrefUtil.getStringValue(getContext(), Constant.PREF_KEY_PRODUCT_ID, "");
+        final String pid = PrefUtil.getStringValue(getContext(), Constant.PREF_KEY_PRODUCT_ID, "160fa6b314e203e9160fa6b314e23e01");
         if (StringUtil.isEmpty(pid)) {
             ((BaseActivity) getActivity()).showEditDialog("设置Product ID", "", new AppDialog.OnUpdateListener<String>() {
                 @Override
@@ -192,13 +206,13 @@ public class MainActivity extends BaseActivity {
                     Log.d(TAG, "onUpdate() called with: newPid = [" + newPid + "]");
 
                     PrefUtil.setStringValue(getContext(), Constant.PREF_KEY_PRODUCT_ID, newPid);
-                    Intent intent = new Intent(getContext(), AddDeviceActivity.class);
+                    Intent intent = new Intent(getContext(), ConfigWifiActivity.class);
                     intent.putExtra(Constant.BUNDLE_SCAN_PID, newPid);
                     startActivity(intent);
                 }
             });
         } else {
-            Intent intent = new Intent(getContext(), AddDeviceActivity.class);
+            Intent intent = new Intent(getContext(), ConfigWifiActivity.class);
             intent.putExtra(Constant.BUNDLE_SCAN_PID, pid);
             startActivity(intent);
         }
@@ -256,16 +270,32 @@ public class MainActivity extends BaseActivity {
     }
 
     //////////////////////////////////////////////////////////////////////
+    /**
+     * 选择产品id
+     */
+    private void showChoice() {
+        final String pid = PrefUtil.getStringValue(getContext(), Constant.PREF_KEY_PRODUCT_ID, "");
+        showChoiceDialog("Product ID", pid, new AppDialog.OnUpdateListener<String>() {
+            @Override
+            public void onUpdate(String newPid) {
+                Log.d(TAG, "onUpdate() called with: newPid = [" + newPid + "]");
 
+
+                PrefUtil.setStringValue(getContext(), Constant.PREF_KEY_PRODUCT_ID, newPid);
+            }
+        });
+    }
     /**
      * 修改产品ID
      */
     private void showEditProductId() {
-        final String pid = PrefUtil.getStringValue(getContext(), Constant.PREF_KEY_PRODUCT_ID, "160f26b2f2b9ffff160f26b2f2b98801");
+        final String pid = PrefUtil.getStringValue(getContext(), Constant.PREF_KEY_PRODUCT_ID, "");
         showEditDialog("设置Product ID", pid, new AppDialog.OnUpdateListener<String>() {
             @Override
             public void onUpdate(String newPid) {
                 Log.d(TAG, "onUpdate() called with: newPid = [" + newPid + "]");
+                SharedPreferences.Editor editor = getSharedPreferences("data",MODE_PRIVATE).edit();
+                editor.putString("pid1",pid);
 
                 PrefUtil.setStringValue(getContext(), Constant.PREF_KEY_PRODUCT_ID, newPid);
             }

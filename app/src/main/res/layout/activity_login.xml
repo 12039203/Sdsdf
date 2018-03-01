@@ -12,8 +12,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:src="@mipmap/xlink"/>
+            android:layout_centerVertical="true"/>
 
     </RelativeLayout>
 
@@ -28,10 +27,8 @@
         <EditText
             android:id="@+id/corpIdEditText"
             style="@style/AppTheme.EditText.Input"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="请输入CompanyID"
-            android:imeOptions="actionNext"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
             android:inputType="text"/>
 
         <EditText

@@ -1,11 +1,17 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_name">XLinkSDK Demo</string>
+    <string name="app_name">Demo</string>
     <string name="confirm">确定</string>
     <string name="cancel">取消</string>
     <string name="complete">完成</string>
     <string name="tips">提示</string>
     <string name="next">下一步</string>
     <string name="ok">好的</string>
+    <string name="config_wifi_tips">请选择您当前设备需要接入的无线网络\n并输入网络密码进行连接</string>
+    <string name="config_wifi_hint">请选择WIFI</string>
+    <string name="config_wifi_pass">请输入密码</string>
+
+    <string name="config_wifi_forgot_password">下次记住密码</string>
+    <string name="config_wifi_show_list">显示列表</string>
 
     <string name="device_list">设备列表</string>
     <string name="device_ctrl">设备控制</string>

@@ -129,6 +129,12 @@ public abstract class BaseActivity extends AppCompatActivity {
             return;
         AppDialog.doubleTextEditText(getContext(), title, value, listener).show();
     }
+    public void showChoiceDialog(String title, String value,
+                               AppDialog.OnUpdateListener<String> listener) {
+        if (isDestroyed())
+            return;
+        AppDialog.doubleTextEditText(getContext(), title, value, listener).show();
+    }
 
 
     public void showLoading() {
